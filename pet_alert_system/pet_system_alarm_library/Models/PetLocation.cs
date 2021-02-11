@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pet_system_alarm_library.Models
 {
-    public class Pet_Location
+    public class PetLocation
     {
         public int Id { get; set; }
         public int IdPet { get; set; }
@@ -18,6 +18,7 @@ namespace pet_system_alarm_library.Models
             get { return DateTime.Now; }
             set { locationDate = value; }
         }
-
+        public int PetId { get; set; }
+        public Pet Pet { get; set; }
     }
 }

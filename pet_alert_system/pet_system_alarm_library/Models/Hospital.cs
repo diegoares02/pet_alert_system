@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace pet_system_alarm_library.Models
 {
-    public class Veterinary
+    public class Hospital
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -12,5 +10,6 @@ namespace pet_system_alarm_library.Models
         public string Email { get; set; }
         public string Schedule { get; set; }
         public string Address { get; set; }
+        public ICollection<Vaccine> Vaccines { get; set; }
     }
 }
