@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace pet_system_alarm_library.Models
 {
@@ -11,6 +9,11 @@ namespace pet_system_alarm_library.Models
         Brown,
         Gold
     }
+    public enum PetType
+    {
+        Cat,
+        Dog
+    }
     public class Pet
     {
         public int Id { get; set; }
@@ -19,7 +22,15 @@ namespace pet_system_alarm_library.Models
         public double Height { get; set; }
         public double Width { get; set; }
         public double Weight { get; set; }
-        public PetColor Color { get; set; }
+        public PetType PetType { get; set; }
+        public PetColor PetColor { get; set; }
         public string Details { get; set; }
+        public string Breed { get; set; }
+        public string PetPhoto { get; set; }
+
+        public int PersonId { get; set; }
+        public Person Person { get; set; }
+        public ICollection<PetLocation> PetLocations { get; set; }
+        public ICollection<Vaccine> Vaccines { get; set; }
     }
 }
