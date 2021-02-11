@@ -20,7 +20,7 @@ namespace pet_system_alarm_library.Models
         public string Name { get; set; }
         public int Age { get; set; }
         public double Height { get; set; }
-        public double Width { get; set; }
+        public double Length { get; set; }
         public double Weight { get; set; }
         public PetType PetType { get; set; }
         public PetColor PetColor { get; set; }
