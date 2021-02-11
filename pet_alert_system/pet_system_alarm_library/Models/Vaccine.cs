@@ -36,6 +36,7 @@ namespace pet_system_alarm_library.Models
         public string Dose { get; set; }
         public string Description { get; set; }
         public int PetId { get; set; }
+        public VaccineType VaccineType { get; set; }
         public Pet Pet { get; set; }
         public int HospitalId { get; set; }
         public Hospital Hospital { get; set; }
