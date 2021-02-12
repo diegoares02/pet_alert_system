@@ -18,7 +18,6 @@ namespace pet_system_alarm_api.DAL
         public DbSet<PetLocation> PetLocations { get; set; }
         public DbSet<Hospital> Hospitals { get; set; }
         public DbSet<Vaccine> Vaccines { get; set; }
-        public DbSet<UserPetAlarmSystem> UserPetAlarmSystems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Pet>().ToTable("Pet");
