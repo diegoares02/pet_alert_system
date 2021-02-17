@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using pet_system_alarm_api.DAL;
 using pet_system_alarm_library.Models;
+using pet_system_alarm_library.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace pet_system_alarm_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class PetController : ControllerBase
     {
         private readonly PetAlarmSystemContext _context;
@@ -35,14 +36,20 @@ namespace pet_system_alarm_api.Controllers
             return new JsonResult(_context.Pets.SingleOrDefault(item => item.Id == id));
         }
 
+        [HttpGet("GetPetByOwner/{id}")]
+        public JsonResult GetPetByOwner(int id)
+        {
+            return new JsonResult(_context.Pets.Where(item => item.PersonId == id));
+        }
+
         // GET api/<PetController>/PetColor
         [HttpGet("GetPetColor")]
         public JsonResult GetPetColor()
         {
-            Dictionary<int, string> petColorDictionary = new Dictionary<int, string>();
+            List<ArrayFormat> petColorDictionary = new List<ArrayFormat>();
             foreach (var item in Enum.GetValues(typeof(PetColor)))
             {
-                petColorDictionary.Add((int)item, Enum.GetName(typeof(PetColor), item));
+                petColorDictionary.Add(new ArrayFormat() { Key = (int)item, Value = Enum.GetName(typeof(PetColor), item) });
             }
             return new JsonResult(petColorDictionary);
         }
@@ -51,10 +58,11 @@ namespace pet_system_alarm_api.Controllers
         [HttpGet("GetPetType")]
         public JsonResult GetPetType()
         {
-            Dictionary<int, string> petTypeDictionary = new Dictionary<int, string>();
+            List<ArrayFormat> petTypeDictionary = new List<ArrayFormat>();
+
             foreach (var item in Enum.GetValues(typeof(PetType)))
             {
-                petTypeDictionary.Add((int)item, Enum.GetName(typeof(PetType), item));
+                petTypeDictionary.Add(new ArrayFormat() { Key = (int)item, Value = Enum.GetName(typeof(PetType), item) });
             }
             return new JsonResult(petTypeDictionary);
         }

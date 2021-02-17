@@ -1,0 +1,36 @@
+﻿<table class="table" id="petTable">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Height</th>
+            <th scope="col">Length</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Type</th>
+            <th scope="col">Color</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#petTable').DataTable({
+            ajax: {
+                url: 'https://localhost:5003/pet/getpetbyowner',
+                dataSrc: ''
+            },
+            columns: [
+                { data: 'name' },
+                { data: 'age' },
+                { data: 'height' },
+                { data: 'length' },
+                { data: 'weight' },
+                { data: 'breed' },
+                { data: 'petType' },
+                { data: 'petColor' }
+            ]
+        });
+    });
+</script>

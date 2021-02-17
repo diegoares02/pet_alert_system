@@ -64,9 +64,8 @@ namespace pet_system_alarm_api
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
+            app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
 
