@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pet_system_alarm_api", "pet_system_alarm_api\pet_system_alarm_api.csproj", "{ACC16F18-DE05-4554-9B27-AA1F7CE1A8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pet_system_alarm_api", "pet_system_alarm_api\pet_system_alarm_api.csproj", "{ACC16F18-DE05-4554-9B27-AA1F7CE1A8BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pet_system_alarm_library", "pet_system_alarm_library\pet_system_alarm_library.csproj", "{DC6EA66A-1C51-4CB3-BAAA-0E757738010F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pet_system_alarm_library", "pet_system_alarm_library\pet_system_alarm_library.csproj", "{DC6EA66A-1C51-4CB3-BAAA-0E757738010F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pet_system_alarm_web", "pet_system_alarm_web\pet_system_alarm_web.csproj", "{564F28D5-DA95-4858-B87F-4912A7698D00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DC6EA66A-1C51-4CB3-BAAA-0E757738010F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC6EA66A-1C51-4CB3-BAAA-0E757738010F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC6EA66A-1C51-4CB3-BAAA-0E757738010F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564F28D5-DA95-4858-B87F-4912A7698D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564F28D5-DA95-4858-B87F-4912A7698D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564F28D5-DA95-4858-B87F-4912A7698D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564F28D5-DA95-4858-B87F-4912A7698D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using pet_system_alarm_library.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,6 @@ namespace pet_system_alarm_api.DAL
     {
         public PetAlarmSystemContext(DbContextOptions<PetAlarmSystemContext> options) : base(options)
         {
-
         }
         public DbSet<Pet> Pets { get; set; }
         public DbSet<Person> People { get; set; }

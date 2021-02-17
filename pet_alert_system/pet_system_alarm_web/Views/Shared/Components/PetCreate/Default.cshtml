@@ -1,0 +1,72 @@
+﻿<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="Name">
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="text" class="form-control" id="age">
+    </div>
+    <div class="mb-3">
+        <label for="height" class="form-label">Height</label>
+        <input type="text" class="form-control" id="height">
+    </div>
+    <div class="mb-3">
+        <label for="length" class="form-label">Length</label>
+        <input type="text" class="form-control" id="length">
+    </div>
+    <div class="mb-3">
+        <label for="petType" class="form-label">Pet type</label>
+        <select class="form-select" aria-label="Default select example" id="petType">
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="petColor" class="form-label">Pet color</label>
+        <select class="form-select" aria-label="Default select example" id="petColor">
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="weight" class="form-label">Weight</label>
+        <input type="text" class="form-control" id="weight">
+    </div>
+    <div class="mb-3">
+        <label for="breed" class="form-label">Breed</label>
+        <input type="text" class="form-control" id="breed">
+    </div>
+    <div class="mb-3">
+        <label for="details" class="form-label">Details</label>
+        <input type="text" class="form-control" id="details">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<script>
+    $(document).ready(function () {
+        var petType = document.getElementById('petType');
+        var petcolor = document.getElementById('petColor');
+        axios.get('https://localhost:5003/pet/getpettype')
+            .then(function (res) {
+                if (res.status == 200) {
+                    for (var item in res.data) {
+                        console.log(res.data[item].key);
+                        var opt = document.createElement('option');
+                        opt.appendChild(document.createTextNode(res.data[item].value));
+                        opt.value = res.data[item].key;
+                        petType.appendChild(opt);
+                    }
+                }
+            });
+        axios.get('https://localhost:5003/pet/getpetcolor')
+            .then(function (res) {
+                if (res.status == 200) {
+                    for (var item in res.data) {
+                        console.log(res.data[item].key);
+                        var opt = document.createElement('option');
+                        opt.appendChild(document.createTextNode(res.data[item].value));
+                        opt.value = res.data[item].key;
+                        petcolor.appendChild(opt);
+                    }
+                }
+            });
+    });
+</script>

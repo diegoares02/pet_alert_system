@@ -28,7 +28,24 @@ namespace pet_system_alarm_api.Controllers
         [HttpGet("GetLast/{id}")]
         public JsonResult GetLast(int id)
         {
-            return new JsonResult(_context.PetLocations.Where(item => item.PetId == id).OrderBy(item => item.Id).Last());
+            var locations = _context.PetLocations;
+            var people = _context.People;
+            var pets = _context.Pets.Where(item => item.PersonId == id).AsEnumerable();
+            var petLocations = (from location in locations
+                                from person in people
+                                from pet in pets
+                                where location.PetId == pet.Id
+                                select new
+                                {
+                                    PetId = pet.Id,
+                                    PetLocation = location.Id,
+                                    Latitude = location.Latitude,
+                                    Longitude = location.Longitude,
+                                    Pet = pet.Name
+                                }).AsEnumerable();
+            //Get the last pet location
+            var result = petLocations.GroupBy(item => item.PetId).Select(order => order.OrderByDescending(o => o.PetLocation).FirstOrDefault()).OrderBy(item => item.PetId);
+            return new JsonResult(result);
         }
         [HttpPost]
         public async Task<JsonResult> Post([FromBody] PetLocation petLocation)
