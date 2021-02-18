@@ -54,5 +54,10 @@ namespace pet_system_alarm_api.Controllers
             await _context.SaveChangesAsync();
             return new JsonResult(new { result = "Ok", petId = petLocation.PetId });
         }
+        [HttpGet("GenerateLocation")]
+        public JsonResult GenerateLocation()
+        {
+            return new JsonResult(new { latitude = Convert.ToDouble("-16." + new Random().Next(524678, 567898)), longitude = Convert.ToDouble("-68." + (double)(new Random().Next(49869, 280000))) });
+        }
     }
 }

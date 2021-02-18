@@ -103,33 +103,33 @@ namespace pet_system_alarm_api.DAL
             vaccines.ForEach(item => context.Vaccines.Add(item));
             context.SaveChanges();
 
-            var petLocations = new List<PetLocation>()
-            {
-                new PetLocation(){ PetId=1, Latitude= 51.50853, Longitude =-0.12514 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=1, Latitude= 51.50860, Longitude =-0.12524 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=1, Latitude= 51.51853, Longitude =-0.12534 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=1, Latitude= 51.50953, Longitude =-0.12544 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=1, Latitude= 51.50853, Longitude =-0.12554 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=1, Latitude= 51.50453, Longitude =-0.12564 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=1, Latitude= 51.50353, Longitude =-0.12574 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=1, Latitude= 51.50653, Longitude =-0.12584 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51553, Longitude =-0.12614 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51533, Longitude =-0.12624 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51543, Longitude =-0.12634 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51553, Longitude =-0.12644 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51563, Longitude =-0.12654 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51573, Longitude =-0.12664 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51583, Longitude =-0.12674 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=2, Latitude= 51.51593, Longitude =-0.12684 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=3, Latitude= 51.52813, Longitude =-0.12814 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=3, Latitude= 51.52823, Longitude =-0.12824 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=3, Latitude= 51.52833, Longitude =-0.12834 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=3, Latitude= 51.52843, Longitude =-0.12844 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=3, Latitude= 51.52853, Longitude =-0.12854 , Speed=new Random().Next(0, 8) },
-                new PetLocation(){ PetId=3, Latitude= 51.52863, Longitude =-0.12864 , Speed=new Random().Next(0, 8) }
-            };
-            petLocations.ForEach(item => context.PetLocations.Add(item));
-            context.SaveChanges();
+            //var petLocations = new List<PetLocation>()
+            //{
+            //    new PetLocation(){ PetId=1, Latitude= 51.50853, Longitude =-0.12514 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=1, Latitude= 51.50860, Longitude =-0.12524 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=1, Latitude= 51.51853, Longitude =-0.12534 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=1, Latitude= 51.50953, Longitude =-0.12544 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=1, Latitude= 51.50853, Longitude =-0.12554 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=1, Latitude= 51.50453, Longitude =-0.12564 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=1, Latitude= 51.50353, Longitude =-0.12574 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=1, Latitude= 51.50653, Longitude =-0.12584 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51553, Longitude =-0.12614 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51533, Longitude =-0.12624 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51543, Longitude =-0.12634 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51553, Longitude =-0.12644 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51563, Longitude =-0.12654 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51573, Longitude =-0.12664 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51583, Longitude =-0.12674 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=2, Latitude= 51.51593, Longitude =-0.12684 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=3, Latitude= 51.52813, Longitude =-0.12814 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=3, Latitude= 51.52823, Longitude =-0.12824 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=3, Latitude= 51.52833, Longitude =-0.12834 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=3, Latitude= 51.52843, Longitude =-0.12844 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=3, Latitude= 51.52853, Longitude =-0.12854 , Speed=new Random().Next(0, 8) },
+            //    new PetLocation(){ PetId=3, Latitude= 51.52863, Longitude =-0.12864 , Speed=new Random().Next(0, 8) }
+            //};
+            //petLocations.ForEach(item => context.PetLocations.Add(item));
+            //context.SaveChanges();
         }
     }
 }
